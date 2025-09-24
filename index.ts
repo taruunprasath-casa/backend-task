@@ -1,5 +1,6 @@
 import express from "express";
-import router from "./routes/user";
+import userRouter from "./routes/user";
+import taskRouter from "./routes/task";
 import { sequelize } from "./db/db";
 import dotenv from "dotenv";
 
@@ -8,7 +9,8 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
-app.use("/users", router);
+app.use("/users", userRouter);
+app.use("/tasks", taskRouter);
 
 app.get("/", (_req, res) => {
   res.json({ message: "Server is working" });
