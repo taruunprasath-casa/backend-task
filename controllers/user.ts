@@ -44,8 +44,9 @@ const userLogin = async (req: Request, res: Response) => {
 
     const payload = { id: user.id, email: user.email };
 
+    console.log("SECRET", process.env.SECRET);
     const token = jwt.sign(payload, process.env.SECRET as string, {
-      expiresIn: "1h",
+      expiresIn: "2w",
     });
     console.log("Auth Token: ", token);
     return res.json({ token });
