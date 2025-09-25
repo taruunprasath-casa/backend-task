@@ -1,11 +1,11 @@
 import { CreationOptional, DataTypes, InferAttributes, Model } from "sequelize";
 import { sequelize } from "../db/db";
-
 export class Task extends Model<InferAttributes<Task>> {
   declare id?: CreationOptional<number>;
   declare name: string;
-  declare descripition: string;
+  declare description: string;
   declare estimatedDate?: Date;
+  declare status: string;
   declare createdAt?: CreationOptional<Date>;
   declare updatedAt?: CreationOptional<Date>;
 }
@@ -22,7 +22,7 @@ Task.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    descripition: {
+    description: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -30,6 +30,10 @@ Task.init(
       type: DataTypes.DATE,
       allowNull: true,
       field: "estimated_date",
+    },
+    status: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     createdAt: {
       type: DataTypes.DATE(3),
