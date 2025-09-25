@@ -12,6 +12,8 @@ router.get("/:id", auth, task.getTaskById);
 
 router.put("/:id", auth, task.updateTask);
 
+router.patch("/:id/status", auth, task.updateTaskStatus);
+
 router.delete("/:id", auth, task.deleteTask);
 
 export default router;
