@@ -1,4 +1,4 @@
-import { z } from "zod";
-import task from "../validators/task";
+import z from "zod";
+import taskData from "../validators/task";
 
-export type TaskData = z.infer<typeof task.taskData>;
+export type TaskData = z.infer<typeof taskData>;
