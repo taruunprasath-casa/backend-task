@@ -4,7 +4,7 @@ export class Task extends Model<InferAttributes<Task>> {
   declare id?: CreationOptional<number>;
   declare name: string;
   declare description: string;
-  declare estimatedDate?: Date;
+  declare estimatedDate?: string;
   declare status: string;
   declare createdAt?: CreationOptional<Date>;
   declare updatedAt?: CreationOptional<Date>;
@@ -27,7 +27,7 @@ Task.init(
       allowNull: false,
     },
     estimatedDate: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: true,
       field: "estimated_date",
     },

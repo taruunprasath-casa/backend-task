@@ -24,9 +24,9 @@ const createUser = async (req: Request, res: Response) => {
       email: newUser.email,
       password: newUser.password,
     });
-  } catch (err) {
+  } catch (err: any) {
     console.error(err);
-    return res.status(500).json({ message: "Server error" });
+    return res.status(500).json({ message: err?.message });
   }
 };
 

@@ -10,7 +10,7 @@ const taskData = z.object({
     "Completed",
     "Terminated",
   ]),
-  estimatedDate: z.coerce.date().optional(),
+  estimatedDate: z.string().optional(),
 });
 
 export default taskData;
